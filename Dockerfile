@@ -1,1 +1,1 @@
-railway run app.py
+gradio app.py
