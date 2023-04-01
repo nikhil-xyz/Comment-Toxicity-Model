@@ -16,9 +16,9 @@ jobs:
           lfs: True
       - name: LFS Install
         run: git lfs install
-      - name: LFS Track
+      - name: LFS Track1
         run: git lfs track *.pkl
-      - name: LFS Track
+      - name: LFS Track2
         run: git lfs track *.h5
       - name: LFS Attributes
         run: git add .gitattributes
