@@ -18,6 +18,8 @@ jobs:
         run: git lfs install
       - name: LFS Track
         run: git lfs track *.pkl
+      - name: LFS Track
+        run: git lfs track *.h5
       - name: Checkout LFS objects
         run: git lfs checkout
       - name: Push to hub
