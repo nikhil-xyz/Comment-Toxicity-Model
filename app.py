@@ -24,6 +24,7 @@ def score_comment(comment):
   return text
 
 interface = gr.Interface(fn=score_comment,
+                title = 'Comment Toxicity Model',
                 inputs=gr.inputs.Textbox(lines=2, placeholder='comment somenthing'),
                 outputs='text')
 interface.launch()
