@@ -22,8 +22,6 @@ jobs:
         run: git lfs track "*.h5"
       - name: LFS Attributes
         run: git add .gitattributes
-      - name: Checkout LFS objects
-        run: git lfs checkout
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
