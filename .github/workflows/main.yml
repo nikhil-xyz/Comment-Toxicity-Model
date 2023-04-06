@@ -14,6 +14,8 @@ jobs:
         with:
           fetch-depth: 0
           lfs: True
+      - name: GIT PULL
+        run: git pull --rebase origin main
       - name: LFS Install
         run: git lfs install
       - name: LFS Track1
