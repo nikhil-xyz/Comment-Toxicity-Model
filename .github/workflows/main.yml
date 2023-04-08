@@ -11,11 +11,17 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Generate
-        uses: skx/github-action-build@master
+      - uses: actions/checkout@v2
+      - name: Configure Python
+        uses: actions/setup-python@v2
         with:
-          builder: .github/build
+          python-version: '3.7'
+
+      - name: Install necessary libraries
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+     
       - name: github-action-build
         uses: skx/github-action-build@master
       - name: Push to hub
