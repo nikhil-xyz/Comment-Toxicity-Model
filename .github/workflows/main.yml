@@ -14,9 +14,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Generate the artifacts
-        uses: nikhil-xyz/github-action-build@v2
+        uses: skx/github-action-build@v2
       - name: Upload the artifacts
-        uses: nikhil-xyz/github-action-publish-binaries@v2
+        uses: skx/github-action-publish-binaries@v2
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
