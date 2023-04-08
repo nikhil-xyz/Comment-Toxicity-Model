@@ -11,9 +11,13 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
+      - name: Generate
+        uses: skx/github-action-build@master
         with:
-          fetch-depth: 0
+          builder: .github/build
+      - name: github-action-build
+        uses: skx/github-action-build@master
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
