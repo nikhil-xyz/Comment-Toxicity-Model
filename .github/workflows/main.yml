@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
-        run: actions/checkout@main
+        run: actions/checkout@v2
       - name: Generate the artifacts
         run: nikhil-xyz/github-action-build@main
       - name: Upload the artifacts
