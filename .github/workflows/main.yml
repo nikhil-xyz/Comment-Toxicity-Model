@@ -22,8 +22,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
      
-      - name: github-action-build
-        uses: skx/github-action-build@master
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
