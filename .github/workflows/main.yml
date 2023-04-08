@@ -1,6 +1,6 @@
 
 on:
-  push:
+  release:
     branches: [master]
 
   # to run this workflow manually from the Actions tab
