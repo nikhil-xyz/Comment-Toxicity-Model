@@ -13,9 +13,9 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@main
       - name: Generate the artifacts
-        uses: skx/github-action-build@main
+        uses: nikhil-xyz/github-action-build@main
       - name: Upload the artifacts
-        uses: skx/github-action-publish-binaries@main
+        uses: nikhil-xyz/github-action-publish-binaries@main
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
