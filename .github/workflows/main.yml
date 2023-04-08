@@ -21,8 +21,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: fix old commits
-        run : git commit --amend --reset-author
      
       - name: Push to hub
         env:
