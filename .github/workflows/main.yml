@@ -10,9 +10,11 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
+      - name: Generate
+        uses: skx/github-action-build@master
         with:
-          fetch-depth: 0
+          builder: .github/build
      
       - name: github-action-publish-binaries
         uses: skx/github-action-publish-binaries@master
