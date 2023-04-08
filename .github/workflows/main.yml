@@ -1,7 +1,9 @@
 
 on:
   push:
-    branches: [main]
+    branches:
+    - main
+    - release/*
 
   # to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -10,6 +12,8 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
+      - name: Install Dependencies
+        run: npm install
       - uses: actions/checkout@master
       - name: Generate
         uses: skx/github-action-build@master
@@ -21,4 +25,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://nikhil5678:$HF_TOKEN@huggingface.co/spaces/nikhil5678/comment-toxicity-model main
+        run: git push --force https://nikhil5678:$HF_TOKEN@huggingface.co/spaces/nikhil5678/comment-toxicity-model master
