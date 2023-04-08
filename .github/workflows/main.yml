@@ -1,29 +1,21 @@
 name: Sync to Hugging Face hub
 on:
-  push:
+  release:
     branches: [main]
 
-  # to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
+# name: Handle Release
 jobs:
-  sync-to-hub:
+  generate:
+    name: Create release-artifacts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          lfs: True
-      - name: GIT PULL
-        run: git pull --rebase
-      - name: LFS Install
-        run: git lfs install
-      - name: LFS Track1
-        run: git lfs track "*.pkl"
-      - name: LFS Track2
-        run: git lfs track "*.h5"
-      - name: LFS Attributes
-        run: git add .gitattributes
+      - name: Checkout the repository
+        uses: actions/checkout@main
+      - name: Generate the artifacts
+        uses: skx/github-action-build@main
+      - name: Upload the artifacts
+        uses: skx/github-action-publish-binaries@main
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
