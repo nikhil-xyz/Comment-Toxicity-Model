@@ -1,6 +1,6 @@
 name: Sync to Hugging Face hub
 on:
-  release:
+  push:
     branches: [main]
 
 
